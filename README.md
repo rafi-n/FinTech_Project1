@@ -12,4 +12,4 @@ Wealth from the machine. A novel python based financial analysis tool.
 
 ![The Simpsons - Bart's Megaphone Testing](https://i.makeagif.com/media/12-22-2020/BskSJ6.gif)
 
-All code must be rogorously tested and handle potential errors.
+All code must be rigorously tested and handle potential errors.
