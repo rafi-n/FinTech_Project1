@@ -7,7 +7,15 @@ import logging as log
 # Declare CONSTANTS using ALLCAPS as convention
 TRADING_DAYS = 252
 
-
+logfilename = Path('./dxm_log.log')
+log.basicConfig(
+    level=log.DEBUG,
+    format="%(asctime)s : %(levelname)s : %(filename)s[%(lineno)d] : %(message)s",
+    filename=logfilename,
+    filemode='w',
+)
+print("Log File:", logfilename)
+log.info(f"Logging Started in {logfilename} ...")
 
 class bcs_fintech:
     """
@@ -25,18 +33,6 @@ class bcs_fintech:
         if not isinstance(portfolio_data, pd.DataFrame):
             raise TypeError("portfolio_data must be a Pandas DataFrame")
         ...
-
-    # Setup logging - put this in init??
-    def start_logger(self):
-        logfilename = Path('./dxm_log.log')
-        log.basicConfig(
-            level=log.DEBUG,
-            format="%(asctime)s : %(levelname)s : %(filename)s[%(lineno)d] : %(message)s",
-            filename=logfilename,
-            filemode='w',
-        )
-        print("Log File:", logfilename)
-        log.info('Logging Started...')
 
     def load_csv_to_df(path_to_csv, report_nulls=True, drop_nulls=True):
         """
