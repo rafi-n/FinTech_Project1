@@ -2,20 +2,9 @@
 import numpy as np
 import pandas as pd
 from pathlib import Path
-import logging as log
 
 # Declare CONSTANTS using ALLCAPS as convention
 TRADING_DAYS = 252
-
-logfilename = Path('./dxm_log.log')
-log.basicConfig(
-    level=log.DEBUG,
-    format="%(asctime)s : %(levelname)s : %(filename)s[%(lineno)d] : %(message)s",
-    filename=logfilename,
-    filemode='w',
-)
-print("Log File:", logfilename)
-log.info(f"Logging Started in {logfilename} ...")
 
 class bcs_fintech:
     """
@@ -25,14 +14,22 @@ class bcs_fintech:
     
     """
     
-    def __init__(self, path_to_csv, report_nulls, drop_nulls, data_set, risk_free, annualized, returns_df1, returns_df2):
+    def __init__(self, path_to_csv, data_set, data1, data2, report_nulls=True, drop_nulls=True, risk_free=[], annualized=True):
         self.path_to_csv = path_to_csv
         self.report_nulls = report_nulls
         self.drop_nulls = drop_nulls
+        self.data_set = data_set
+        self.risk_free = risk_free
+        self.annualized = annualized
+        self.data1 = data1
+        self.data2 = data2
         
-        if not isinstance(portfolio_data, pd.DataFrame):
-            raise TypeError("portfolio_data must be a Pandas DataFrame")
-        ...
+        if not isinstance(self.data_set, pd.DataFrame):
+            raise TypeError("data_set must be a Pandas DataFrame")
+        if not isinstance(self.data1, pd.DataFrame):
+            raise TypeError("data1 must be a Pandas DataFrame")
+        if not isinstance(self.data2, pd.DataFrame):
+            raise TypeError("data2 must be a Pandas DataFrame")
 
     def load_csv_to_df(path_to_csv, report_nulls=True, drop_nulls=True):
         """
