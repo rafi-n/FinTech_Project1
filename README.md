@@ -1,3 +1,39 @@
+# Ditiae Ex Machina
+
+Often times, when investing we choose investments that we are familiar with or that appeal to us for various reasons. Our choices may not be wise financially despite our feelings.
+
+In order to keep all stocks in the portfolio, we must make sure that they meet some criteria:
+
+1. Positive returns
+2. Low risk, good returns-to-risk
+3. Diverse
+4. Low volatility
+5. Positive forecasted growth
+
+We developed a tool for analyzing a given portfolio to determine if it can provide positive returns while satisfying the investor’s other sensibilities.
+
+
+## This project uses the following APIs:
+
+1. Alpaca API
+2. PolygonIO
+
+## It requires the following libraries:
+
+1. pathlib
+2. numpy
+3. pandas
+4. hvplot
+5. seaborn
+6. dotenv
+7. alpaca_trade_api
+8. datetime
+9. dateutil
+
+
+## Analysis
+
+
 The analysis looked at the performance of a stock portfolio versus the Dow Jones Industrial Average Index. A Monte Carlo simulation was done to see the portfolio's forecasted performance over 30 years.
 
 We'll draw a conclusion as to the best portfolio by examining the following:
@@ -14,7 +50,7 @@ We'll draw a conclusion as to the best portfolio by examining the following:
 
 The returns were plotted to give a graphical representation of a large dataset but it provides insight into our data. Initially, we found a 75% decline in returns for AAPL but this was caused by a 4-for-1 stock split. Stock split data was obtained through PolygonIO API and applied to the dataset.
 
-![]('./images/cml_returns_plot.png')
+![](./images/cml_returns_plot.png)
 
 Once the returns were thoroughly examined, the cumulative returns were calculated, which shows us which stocks ultimately produce the best returns. The returns from highest to lowest are:
 
@@ -79,3 +115,7 @@ With an equally weighted portfolio, the returns are less than the initial invest
 4. DIS     0.19
 
 ![](./images/cml_pie_plot.png)
+
+## Conclusion
+
+A stock portfolio can be adjusted to make a return by adjusting its weights. An investor can keep investments that they believe in without having to compromise on returns. The analysis can show how diverse and risky a portfolio is but it is ultimately up to the investor to decide what they want to invest in.
