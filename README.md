@@ -115,3 +115,7 @@ With an equally weighted portfolio, the returns are less than the initial invest
 4. DIS     0.19
 
 ![](./images/cml_pie_plot.png)
+
+## Conclusion
+
+A stock portfolio can be adjusted to make a return by adjusting its weights. An investor can keep investments that they believe in without having to compromise on returns. The analysis can show how diverse and risky a portfolio is but it is ultimately up to the investor to decide what they want to invest in.
